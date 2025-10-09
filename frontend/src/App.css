@@ -1,0 +1,259 @@
+/* ----------------- General ----------------- */
+body, html, #root, .app-container {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ----------------- Blobs / Dots ----------------- */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.blob-green { width: 400px; height: 400px; background: #10b981; top: -100px; left: -100px; }
+.blob-purple { width: 300px; height: 300px; background: #8b5cf6; top: 200px; right: -50px; }
+.blob-pink { width: 200px; height: 200px; background: #ec4899; bottom: -50px; left: 150px; }
+
+/* ----------------- Header ----------------- */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 15px;
+  background: #10b981;
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo { width: 50px; height: 50px; }
+
+.header h1 { font-size: 1.8rem; margin: 0; color: #ffffff; }
+.sub-text { font-size: 0.95rem; color: #ffffff; margin-top: 5px; }
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.profile-container span{
+  color: #ffffff;
+}
+
+.profile-container button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.profile-container button:hover { background-color: #0051ff; }
+
+/* ----------------- Controls / Input Cards ----------------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  border-radius: 15px;
+  padding: 15px;
+  background: #ffffff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  min-width: 150px;
+  flex: 1;
+  max-width: 180px;
+  transition: all 0.3s ease;
+}
+
+.input-card { display: flex; flex-direction: column; }
+.glow-card { box-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
+.glow-card:hover { box-shadow: 0 0 18px rgba(16, 185, 129, 0.8); }
+
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.custom-select, .custom-input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+
+.custom-select:focus, .custom-input:focus {
+  outline: none;
+  border-color: #10b981;
+}
+
+/* ----------------- Chart Container ----------------- */
+.chart-container {
+  max-width: 950px;
+  margin: 25px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* ----------------- Description ----------------- */
+.description-container {
+  max-width: 950px;
+  margin: 25px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.description-container h2 { color: #10b981; margin-bottom: 15px; font-size: 1.5rem; }
+.description-container p { color: #374151; font-size: 0.95rem; margin-bottom: 10px; line-height: 1.5; }
+
+/* ----------------- Auth Page / Login ----------------- */
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.3;
+  z-index: 0;
+}
+.blob-green { width: 400px; height: 400px; background: #10b981; top: -100px; left: -100px; }
+.blob-purple { width: 300px; height: 300px; background: #8b5cf6; top: 200px; right: -50px; }
+.blob-pink { width: 200px; height: 200px; background: #ec4899; bottom: -50px; left: 150px; }
+
+/* Header at the top */
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* logo left */
+  width: 100%;
+  padding: 20px 40px;
+  background-color: #f3f4f6;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo */
+.login-logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+/* Title */
+.login-header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #10b981;
+}
+
+/* Form container below header */
+.login-form-container {
+  margin-top: 40px; /* space below header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Form elements */
+.login-form-container h2 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.login-form-container input {
+  width: 250px;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+.login-form-container button {
+  width: 270px;
+  padding: 10px;
+  margin-top: 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #10b981;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-form-container button:hover {
+  background-color: #059669;
+}
+
+.switch-auth {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-header {
+    padding: 15px 20px;
+  }
+  .login-logo {
+    width: 50px;
+    height: 50px;
+  }
+  .login-header h1 {
+    font-size: 1.5rem;
+  }
+  .login-form-container input, .login-form-container button {
+    width: 90%;
+  }
+}

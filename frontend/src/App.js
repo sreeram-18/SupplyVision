@@ -4,7 +4,7 @@ import { FaIndustry, FaMapMarkerAlt, FaProjectDiagram, FaMoneyBill, FaUserCircle
 import { supabase } from "./supabaseClient";
 import "./App.css";
 
-const API_URL = "https://supplyvision.onrender.com";
+const API_URL = "process.env.https://supplyvision.onrender.com";
 
 function Auth({ onLogin }) {
   const [email, setEmail] = useState("");

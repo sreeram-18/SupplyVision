@@ -4,6 +4,8 @@ import { FaIndustry, FaMapMarkerAlt, FaProjectDiagram, FaMoneyBill, FaUserCircle
 import { supabase } from "./supabaseClient";
 import "./App.css";
 
+const API_URL = "https://supplyvision.onrender.com";
+
 function Auth({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -88,11 +90,11 @@ function ForecastPage({ user }) {
   useEffect(() => {
     const fetchOptions = async () => {
       try {
-        const [matRes, locRes, towRes] = await Promise.all([
-          fetch("http://127.0.0.1:8000/materials"),
-          fetch("http://127.0.0.1:8000/locations"),
-          fetch("http://127.0.0.1:8000/towers"),
-        ]);
+const [matRes, locRes, towRes] = await Promise.all([
+  fetch(`${API_URL}/materials`),
+  fetch(`${API_URL}/locations`),
+  fetch(`${API_URL}/towers`),
+]);
         const matData = await matRes.json();
         const locData = await locRes.json();
         const towData = await towRes.json();
@@ -114,9 +116,9 @@ function ForecastPage({ user }) {
     const fetchForecast = async () => {
       if (!material || !location || !tower) return;
       try {
-        const response = await fetch(
-          `http://127.0.0.1:8000/forecast?material=${material}&project_location=${location}&tower_type=${tower}&budget=${budget}&tax=${tax}&inflation=${inflation}`
-        );
+const response = await fetch(
+  `${API_URL}/forecast?material=${material}&project_location=${location}&tower_type=${tower}&budget=${budget}&tax_percent=${tax}&inflation_percent=${inflation}`
+);
         const data = await response.json();
         setForecastData(data);
       } catch (err) {
